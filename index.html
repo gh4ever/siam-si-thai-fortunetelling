@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="태국 사원 400년 전통 점술 씨암씨(เซียมซี)를 온라인으로 체험해보세요.">
+<meta property="og:title" content="🏮 씨암씨 · เซียมซี · 태국 사원 점술">
+<meta property="og:description" content="태국 사원 400년 전통 점술을 온라인으로. 대통을 흔들어 점괘를 뽑아보세요.">
+<title>🏮 씨암씨 · เซียมซี</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --red-deep: #8b1a1a;
+    --red-mid: #c0392b;
+    --cream: #fdf6e3;
+    --cream-dark: #f5eac8;
+    --text-dark: #2c1810;
+    --text-mid: #5a3e2b;
+    --text-light: #8b6f5e;
+    --border: rgba(201,168,76,0.3);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #1a0a00;
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(139,26,26,0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(139,26,26,0.2) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 20 L50 20 L38 29 L43 44 L30 35 L17 44 L22 29 L10 20 L25 20Z' fill='none' stroke='rgba(201,168,76,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+    min-height: 100vh;
+    font-family: 'Noto Serif KR', serif;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-top: 1rem;
+  }
+
+  .lantern {
+    font-size: 52px;
+    display: block;
+    margin-bottom: 0.75rem;
+    animation: sway 3s ease-in-out infinite;
+    transform-origin: top center;
+  }
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  .title-thai {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .title-ko {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--cream);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .title-sub {
+    font-size: 12px;
+    color: var(--gold);
+    opacity: 0.7;
+    display: block;
+    letter-spacing: 0.1em;
+  }
+
+  .gold-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.2rem auto;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--cream);
+    border-radius: 16px;
+    border: 1px solid var(--gold);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-label {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: 'Noto Serif KR', serif;
+    border-radius: 10px;
+    background: var(--cream-dark);
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    cursor: pointer;
+    margin-bottom: 1rem;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238b6f5e' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+  }
+
+  .shake-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    border-radius: 12px;
+    background: var(--red-deep);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    letter-spacing: 0.03em;
+  }
+
+  .shake-btn:hover { background: var(--red-mid); }
+  .shake-btn:active { transform: scale(0.98); }
+  .shake-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .shake-btn.shaking {
+    animation: shake 0.7s ease;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: rotate(0deg) translateX(0); }
+    10% { transform: rotate(-8deg) translateX(-3px); }
+    25% { transform: rotate(8deg) translateX(3px); }
+    40% { transform: rotate(-6deg) translateX(-2px); }
+    55% { transform: rotate(6deg) translateX(2px); }
+    70% { transform: rotate(-3deg) translateX(-1px); }
+    85% { transform: rotate(3deg) translateX(1px); }
+  }
+
+  /* RESULT */
+  .result-area {
+    display: none;
+  }
+
+  .result-area.visible {
+    display: block;
+    animation: fadeUp 0.5s ease;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stick-display {
+    text-align: center;
+    padding: 1.5rem 0 1rem;
+  }
+
+  .stick-label-small {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 11px;
+    color: var(--gold);
+    opacity: 0.7;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .number-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--red-deep);
+    border: 2px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Noto Serif KR', serif;
+  }
+
+  .level-badge {
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 14px;
+    border-radius: 99px;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 600;
+  }
+
+  .level-great { background: #fdf3c8; color: #7a5c00; border: 1px solid #e0c060; }
+  .level-good  { background: #e8f4e8; color: #2d6a2d; border: 1px solid #90c890; }
+  .level-mid   { background: #fef0e0; color: #8a5000; border: 1px solid #e0a860; }
+  .level-bad   { background: #fde8e8; color: #8a1a1a; border: 1px solid #e08080; }
+
+  .poem-thai {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 2.2;
+    font-style: italic;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .meaning-label {
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .meaning-text {
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+  }
+
+  .topic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .topic-item {
+    padding: 10px 12px;
+    background: var(--cream-dark);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+
+  .topic-name {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .topic-value {
+    font-size: 13px;
+    color: var(--text-dark);
+    line-height: 1.5;
+  }
+
+  .again-btn {
+    width: 100%;
+    padding: 13px;
+    font-size: 14px;
+    font-family: 'Noto Serif KR', serif;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.15s ease;
+  }
+
+  .again-btn:hover { background: rgba(201,168,76,0.08); }
+
+  .footer {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .footer p {
+    font-size: 12px;
+    color: rgba(201,168,76,0.5);
+    line-height: 1.8;
+  }
+
+  .footer a {
+    color: var(--gold);
+    opacity: 0.7;
+    text-decoration: none;
+  }
+
+  .footer a:hover { opacity: 1; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <span class="lantern">🏮</span>
+    <span class="title-thai">เซียมซี · SIAM SI</span>
+    <span class="title-ko">씨암씨</span>
+    <span class="title-sub">태국 사원 400년 전통 점술</span>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="card">
+    <span class="section-label">무엇이 궁금하신가요?</span>
+    <select id="topicSelect">
+      <option value="overall">🔮 전반적인 운세</option>
+      <option value="money">💰 재물 · 사업</option>
+      <option value="love">❤️ 연애 · 인연</option>
+      <option value="career">✨ 직업 · 커리어</option>
+      <option value="health">🌿 건강</option>
+      <option value="travel">✈️ 여행 · 이동</option>
+    </select>
+    <button class="shake-btn" id="shakeBtn" onclick="shakeTube()">
+      🎋 대통을 흔들어 점괘를 뽑는다
+    </button>
+  </div>
+
+  <div class="result-area" id="resultArea">
+    <div class="stick-display">
+      <span class="stick-label-small">뽑힌 제비 번호</span>
+      <div class="number-wrap" id="stickNum">—</div>
+    </div>
+
+    <div class="card">
+      <div style="text-align:center; margin-bottom:1rem;">
+        <span class="level-badge" id="levelBadge">—</span>
+      </div>
+      <div class="poem-thai" id="poemThai"></div>
+      <span class="meaning-label">✦ 풀이</span>
+      <div class="meaning-text" id="meaningText"></div>
+      <div class="topic-grid" id="topicGrid"></div>
+    </div>
+
+    <button class="again-btn" onclick="resetApp()">↺ 다시 뽑기</button>
+  </div>
+
+  <div class="footer">
+    <p>
+      씨암씨는 참고용 점술이에요.<br>
+      결국 삶은 스스로 만들어가는 것이니까요. 🙏<br><br>
+      태국 일상 콘텐츠 →
+      <a href="https://threads.net/@YOUR_HANDLE" target="_blank">Threads</a>
+    </p>
+  </div>
+
+</div>
+
+<script>
+const fortunes = [
+  { num:1, level:'great', poem:'ใบที่หนึ่งเป็นเลิศดีเป็นศักดิ์ศรี\nดังดาวฤกษ์ส่องสว่างทั่วทุกที่\nการงานดีลาภมากมีโชคดี\nสิ่งที่หวังจะสำเร็จทุกประการ', meaning:'첫 번째 제비 — 대길(大吉)의 으뜸이라. 별빛이 사방을 밝히듯 운이 트이니, 하는 일마다 성취되고 바라는 것이 이루어지리라.', topics:{money:'재물이 들어오는 시기',love:'좋은 인연이 가까이',career:'승진·성과의 기운',health:'몸과 마음이 평안함',travel:'길한 여정',overall:'만사가 순조로움'} },
+  { num:2, level:'good', poem:'ใบที่สองช้าก็เร็วได้สมหมาย\nเหมือนดอกไม้ที่เบ่งบานในไม่ช้า\nอย่าร้อนรนให้รอคอยอย่างมีสติ\nกาลเวลาจะนำพาสิ่งดีมา', meaning:'두 번째 제비 — 더디지만 반드시 이루어지리라. 꽃이 때를 기다려 피어나듯, 조급하지 말고 침착히 기다리면 좋은 것이 찾아오리라.', topics:{money:'지금은 아니지만 곧 풀림',love:'서두르지 말 것',career:'준비하면 기회 옴',health:'무리하지 않음이 좋음',travel:'늦춰도 괜찮음',overall:'인내가 열쇠'} },
+  { num:3, level:'good', poem:'ใบที่สามเหมือนแสงทองยามเช้า\nนำทางสว่างออกจากความมืดหนา\nมีผู้ใหญ่คอยช่วยเหลือนำทาง\nเดินหน้าต่อได้สำเร็จดังปรารถนา', meaning:'세 번째 제비 — 아침 햇살이 어둠을 걷어내듯, 귀인이 나타나 길을 밝혀주리라. 윗사람의 도움을 받아 바라던 일이 이루어지리라.', topics:{money:'귀인의 도움으로 재물이 옴',love:'중매자가 나타날 수도',career:'상사의 지지를 받음',health:'좋은 의사를 만남',travel:'좋은 동반자를 만남',overall:'귀인운이 좋음'} },
+  { num:4, level:'mid', poem:'ใบที่สี่นี้ไซร้ว่าไกลคู่\nมิได้รู้ปะพบประสบสอง\nเหมือนลูกไก่ฝูงเดียวเที่ยวคะนอง\nตัวหนึ่งต้องจากไปเสียไกลกัน', meaning:'네 번째 제비 — 지금은 서로 멀리 있는 시기라. 한 무리의 병아리 중 하나가 떠나듯, 인연이나 기회가 가까이 있지 않구나. 그러나 오랜 뒤에는 만남이 있으리라.', topics:{money:'지금 당장은 어려움',love:'인연이 아직 멀리',career:'때를 좀 더 기다릴 것',health:'지병은 천천히 나음',travel:'돌아오는 데 시간이 걸림',overall:'인내의 시간'} },
+  { num:5, level:'good', poem:'ใบที่ห้าเหมือนปลาอยู่ในน้ำ\nสุขสบายตามธรรมชาติของตน\nทำสิ่งใดก็ได้ดังใจหวัง\nชีวิตดีมีความสุขทุกวัน', meaning:'다섯 번째 제비 — 물고기가 물 속에서 자유롭듯, 지금 있는 자리가 편안하고 자연스러운 곳이라. 하고자 하는 일이 뜻대로 이루어지고 매일이 복되리라.', topics:{money:'안정적으로 들어옴',love:'편안하고 자연스러운 인연',career:'적성에 맞는 일을 하고 있음',health:'건강이 좋음',travel:'편안한 여행',overall:'지금 이 자리가 좋음'} },
+  { num:6, level:'mid', poem:'ใบที่หกตกจิตคิดสงสัย\nว่าอย่านึกกลอกกลับจงดับใจ\nแม้นนานไปคงสมอารมณ์ปอง\nเดี๋ยวนี้เลวเหลวไหลไม่ได้เรื่อง', meaning:'여섯 번째 제비 — 마음이 흔들리고 의심이 많구나. 갈팡질팡하지 말고 마음을 가라앉힐 것. 지금은 뜻대로 되지 않으나, 시간이 지나면 바라던 바를 이루리라.', topics:{money:'재물 얻기 어렵지 않음',love:'조금 더 기다리면 좋음',career:'조급함을 내려놓을 것',health:'완쾌는 천천히',travel:'서두르지 말 것',overall:'마음의 안정이 먼저'} },
+  { num:7, level:'great', poem:'ใบที่เจ็ดเหมือนมังกรบินขึ้นฟ้า\nพละกำลังเต็มเปี่ยมออกหากิน\nโชคลาภมามากมีสิ่งดี\nชนะทุกอย่างดังใจปรารถนา', meaning:'일곱 번째 제비 — 용이 하늘로 비상하듯, 기력이 충만하고 기운이 넘치는 시기라. 재운이 풍성하고 좋은 일이 많으니, 바라는 모든 것이 이루어지리라.', topics:{money:'큰 재물이 올 수 있음',love:'열정적인 인연',career:'강하게 나아갈 때',health:'기력이 충만함',travel:'활기찬 여행',overall:'대길의 기운'} },
+  { num:8, level:'good', poem:'ใบที่แปดเหมือนดอกบัวพ้นโคลน\nงามบริสุทธิ์ผุดผ่องสดชื่น\nผ่านความยากลำบากมาแล้ว\nชีวิตดีขึ้นมีความหวังใหม่', meaning:'여덟 번째 제비 — 연꽃이 진흙 속에서 피어나듯, 어려운 시절을 지나 이제 맑고 아름다운 날이 오리라. 고난을 딛고 새로운 희망이 찾아오는 시기이니라.', topics:{money:'어려움 뒤에 재물이 옴',love:'상처 뒤에 좋은 인연',career:'재도전이 성공함',health:'회복세에 접어듦',travel:'새 시작을 위한 여행',overall:'전환점이 되는 시기'} },
+  { num:9, level:'bad', poem:'ใบที่เก้าเหมือนเรือในพายุ\nลมแรงซัดไปมาไม่มีหลักยึด\nต้องระวังอย่าตัดสินใจเร็ว\nรอให้พายุผ่านพ้นก่อน', meaning:'아홉 번째 제비 — 폭풍 속의 배처럼, 거센 바람에 이리저리 흔들리는 시기라. 중요한 결정을 서두르지 말 것. 폭풍이 지나가기를 기다리는 것이 현명하니라.', topics:{money:'지출을 줄이고 신중할 것',love:'감정적 결정은 금물',career:'현재 자리를 지킬 것',health:'과로를 조심할 것',travel:'위험한 시기이니 조심',overall:'멈추고 기다릴 때'} },
+  { num:10, level:'mid', poem:'ใบที่สิบหยิบยกตกกับใบ้\nเหมือนได้นอนหลับไปแล้วกลับฝัน\nจะพูดจาแสนยากลำบากครัน\nไม่รู้วันเป็นตายวายชีวา', meaning:'열 번째 제비 — 꿈속을 헤매는 것 같구나. 말하기 어렵고 앞날이 불분명한 시기라. 그러나 건강한 분은 서서히 나아지고, 인연은 언젠가 이루어지리라.', topics:{money:'얻기 힘드나 나중에 풀림',love:'시간이 지나면 이루어짐',career:'지금은 불명확한 시기',health:'서서히 나아질 것',travel:'분실물은 찾기 어려움',overall:'안개가 걷히길 기다릴 것'} },
+  { num:11, level:'great', poem:'ใบสิบเอ็ดเหมือนพระจันทร์เต็มดวง\nส่องสว่างทั่วฟ้าทุกมุมมอง\nทุกสิ่งดีงามสมบูรณ์แบบ\nโชคดีมีสุขทุกประการ', meaning:'열한 번째 제비 — 보름달이 환하게 세상을 비추듯, 모든 것이 완전하고 원만한 시기라. 매사가 좋고 복이 가득하리라.', topics:{money:'풍족함',love:'아름다운 인연',career:'완성과 성취',health:'최상의 건강',travel:'완벽한 여행',overall:'모든 면에서 길함'} },
+  { num:12, level:'bad', poem:'ใบสิบสองต้องตามตำราว่า\nเหตุจะมารุมโรคให้โศกศัลย์\nต้องสะเดาะเคราะห์กรรมทำบูชา\nต่อเดือนหน้าจะคลายสบายเอย', meaning:'열두 번째 제비 — 여러 가지 어려움이 겹치는 시기라. 올해는 재물이 들어오기 어렵고, 병이 있다면 아직 낫지 않으리라. 복을 빌고 나쁜 기운을 씻어내는 것이 좋으리라.', topics:{money:'올해는 재물이 부족함',love:'어려운 시기',career:'서두르면 오히려 실패',health:'건강에 주의할 것',travel:'여행은 미루는 게 좋음',overall:'기도와 선행이 필요한 때'} },
+  { num:13, level:'good', poem:'ใบสิบสามเหมือนฝนตกต้องฤดู\nชุ่มชื้นดินดีพืชผลงอกงาม\nสิ่งที่หว่านไว้จะได้เก็บเกี่ยว\nผลผลิตดีตามที่หวังทุกอย่าง', meaning:'열세 번째 제비 — 제때 내리는 비처럼, 땅이 촉촉하고 씨앗이 잘 자라는 시기라. 그동안 뿌려둔 씨앗을 거두는 때가 오고 있으니, 바라던 결실을 맺으리라.', topics:{money:'이전의 노력이 결실을 맺음',love:'진심이 통하는 시기',career:'성과를 인정받음',health:'꾸준한 관리가 빛을 발함',travel:'풍요로운 여행',overall:'수확의 시기'} },
+  { num:14, level:'mid', poem:'ใบสิบสี่เหมือนเส้นทางสองแพร่ง\nไม่รู้จะเดินทางไหนดีกว่า\nต้องคิดให้ดีก่อนตัดสินใจ\nเลือกทางที่ถูกต้องแล้วก้าวไป', meaning:'열네 번째 제비 — 두 갈래 길 앞에 선 것 같구나. 어느 쪽을 선택해야 할지 몰라 망설이는 시기라. 충분히 생각하고 신중하게 결정하면, 올바른 길로 나아갈 수 있으리라.', topics:{money:'투자 전 신중할 것',love:'선택의 기로에 서 있음',career:'방향을 잘 정해야 할 때',health:'의사 의견을 여럿 들을 것',travel:'목적지를 잘 정할 것',overall:'신중한 선택이 필요한 시기'} },
+  { num:15, level:'great', poem:'ใบสิบห้าเหมือนดอกบัวทอง\nบานสะพรั่งกลางสระน้ำใส\nมีโชคลาภความสุขมากมาย\nทุกอย่างสำเร็จดังใจปรารถนา', meaning:'열다섯 번째 제비 — 황금 연꽃이 맑은 연못 위에 활짝 피어나듯, 큰 행운과 기쁨이 넘치리라. 모든 일이 뜻대로 이루어지는 최상의 시기이니라.', topics:{money:'큰 행운이 따름',love:'아름다운 꽃 같은 인연',career:'최고의 결과를 냄',health:'건강이 빛남',travel:'행복한 여정',overall:'금운이 함께하는 대길'} },
+  { num:16, level:'good', poem:'ใบสิบหกเหมือนลมพัดอ่อน\nเย็นสบายแก่ผู้เดินทาง\nค่อยๆ ก้าวไปอย่างมั่นคง\nถึงปลายทางได้อย่างสมหมาย', meaning:'열여섯 번째 제비 — 부드러운 바람이 길 가는 이를 시원하게 해주듯, 천천히 꾸준히 나아가면 반드시 목적지에 닿으리라.', topics:{money:'서두르지 않으면 꾸준히 들어옴',love:'편안하고 안정적인 인연',career:'꾸준함이 성공을 만듦',health:'무리하지 말고 쉬어가며',travel:'여유롭게 가는 것이 좋음',overall:'꾸준함이 미덕인 시기'} },
+  { num:17, level:'mid', poem:'ใบสิบเจ็ดเหมือนเมล็ดพันธุ์\nยังไม่งอกต้องรอฝนตกมา\nอย่าเร่งรีบจงอดทนรอก่อน\nเมื่อถึงเวลาจะงอกงามเอง', meaning:'열일곱 번째 제비 — 아직 싹트지 않은 씨앗처럼, 비가 내리기를 기다리는 시기라. 서두르지 말고 참고 기다리면, 때가 되어 저절로 자라나리라.', topics:{money:'아직 때가 아님',love:'기다림이 필요함',career:'준비 기간으로 삼을 것',health:'회복에 시간이 필요함',travel:'아직 출발할 때가 아님',overall:'잠재력을 키우는 시기'} },
+  { num:18, level:'great', poem:'ใบสิบแปดดีเลิศประเสริฐนัก\nเหมือนแก้วมณีส่องแสงสว่างไสว\nทุกประการสำเร็จสมดังใจ\nโชคดีมีสุขนิรันดร์ไป', meaning:'열여덟 번째 제비 — 보석이 찬란하게 빛나듯, 더할 나위 없이 훌륭한 운이라. 모든 일이 마음먹은 대로 이루어지고, 기쁨과 행복이 오래 이어지리라.', topics:{money:'뛰어난 재운',love:'빛나는 인연',career:'탁월한 성과',health:'빛나는 건강',travel:'빛나는 여정',overall:'보석 같은 대길'} },
+  { num:19, level:'good', poem:'ใบสิบเก้าเหมือนนกที่บินสูง\nมองเห็นทิวทัศน์กว้างไกล\nมีปัญญาในการมองการณ์ไกล\nตัดสินใจถูกต้องทุกครั้ง', meaning:'열아홉 번째 제비 — 높이 나는 새가 넓은 세상을 내려다보듯, 지혜롭게 멀리 내다보는 시기라. 판단력이 좋아져 올바른 결정을 내릴 수 있으리라.', topics:{money:'현명한 투자가 이득을 냄',love:'이성적 판단이 도움이 됨',career:'전략적으로 움직일 것',health:'예방이 최선임을 알게 됨',travel:'계획을 잘 세우면 좋음',overall:'지혜가 빛나는 시기'} },
+  { num:20, level:'mid', poem:'ใบยี่สิบเหมือนเมฆฝน\nบดบังดวงอาทิตย์ชั่วคราว\nอย่าท้อแท้เพราะมันผ่านไป\nแสงสว่างจะกลับมาในไม่ช้า', meaning:'스무 번째 제비 — 먹구름이 잠시 태양을 가리듯, 지금은 답답하게 느껴질 수 있으리라. 그러나 구름은 반드시 걷히고, 곧 밝은 빛이 돌아오리라.', topics:{money:'일시적인 어려움',love:'잠시 시련이 있으나 회복됨',career:'어려운 시기지만 곧 나아짐',health:'잠시 기운이 없음',travel:'날씨나 일정이 어긋날 수 있음',overall:'곧 나아질 것이니 포기 말 것'} },
+  { num:21, level:'good', poem:'ใบยี่สิบเอ็ดเหมือนแม่น้ำไหล\nไม่หยุดนิ่งเดินหน้าต่อไป\nสู่ทะเลกว้างใหญ่ในที่สุด\nความสำเร็จรอที่ปลายทาง', meaning:'스물한 번째 제비 — 강물이 멈추지 않고 흐르듯, 꾸준히 앞으로 나아가면 넓은 바다에 닿으리라. 끝까지 포기하지 않는 자에게 성공이 기다리고 있느니라.', topics:{money:'포기하지 않으면 결실',love:'꾸준히 마음을 전할 것',career:'지속성이 성공의 열쇠',health:'꾸준한 치료와 관리',travel:'끝까지 가면 도착함',overall:'지속이 힘인 시기'} },
+  { num:22, level:'great', poem:'ใบยี่สิบสองมงคลยิ่ง\nดาวฤกษ์ดีส่องสว่างนำทาง\nมีบุญบารมีคุ้มครอง\nสำเร็จทุกอย่างดังปรารถนา', meaning:'스물두 번째 제비 — 길한 별이 빛나며 길을 이끌어주는 시기라. 덕과 복이 지켜주니, 원하는 모든 것이 이루어지리라.', topics:{money:'복덕이 함께함',love:'복있는 인연',career:'귀인의 도움으로 성공',health:'복으로 건강이 지켜짐',travel:'복된 여정',overall:'별의 축복을 받는 시기'} },
+  { num:23, level:'mid', poem:'ใบยี่สิบสามเหมือนหินกลางน้ำ\nอยู่กลางน้ำแต่ยังแห้งอยู่\nพยายามมากแต่ผลน้อย\nต้องอดทนรอเวลาที่ดีกว่า', meaning:'스물세 번째 제비 — 물 속에 있는 돌처럼, 아무리 노력해도 아직 결실이 따르지 않는 시기라. 힘은 쓰이지만 결과가 적구나. 더 좋은 때를 기다리며 참을 것이니라.', topics:{money:'노력에 비해 결과가 적음',love:'마음이 닿지 않는 느낌',career:'노력이 인정받지 못하는 시기',health:'치료가 더디게 효과를 냄',travel:'기대보다 덜 만족스러울 수 있음',overall:'노력의 결실을 기다리는 시기'} },
+  { num:24, level:'good', poem:'ใบยี่สิบสี่เหมือนไก่ขันรุ่ง\nบอกรุ่งอรุณแห่งวันใหม่\nโอกาสใหม่กำลังจะมาถึง\nเตรียมพร้อมรับสิ่งดีที่จะมา', meaning:'스물네 번째 제비 — 새벽을 알리는 닭 울음소리처럼, 새로운 날의 기회가 다가오고 있으리라. 좋은 것을 맞이할 준비를 갖추어라.', topics:{money:'새로운 수입의 기회',love:'새로운 인연의 시작',career:'새 기회가 찾아옴',health:'회복의 새벽이 옴',travel:'새 출발의 여행',overall:'새로운 시작을 알리는 시기'} },
+  { num:25, level:'great', poem:'ใบยี่สิบห้าเหมือนพระอาทิตย์\nส่องแสงทองสว่างไสวทั่วดิน\nความสำเร็จยิ่งใหญ่รออยู่ข้างหน้า\nก้าวไปด้วยความมั่นใจ', meaning:'스물다섯 번째 제비 — 태양이 대지를 환하게 비추듯, 크나큰 성공이 앞에서 기다리고 있으리라. 자신감을 가지고 앞으로 나아가라.', topics:{money:'큰 성공의 재운',love:'빛나는 관계',career:'커다란 성취가 옴',health:'완전한 건강',travel:'빛나는 여행',overall:'태양처럼 빛나는 대길'} },
+  { num:26, level:'mid', poem:'ใบยี่สิบหกเหมือนไม้ที่โค้งงอ\nลมแรงทำให้โน้มเอียงไป\nแต่รากลึกแน่นทนทาน\nผ่านพายุได้โดยไม่หัก', meaning:'스물여섯 번째 제비 — 강풍에 휘어지는 나무처럼, 지금은 어려움에 굽히는 것 같으리라. 그러나 뿌리가 깊으면 꺾이지 않으니, 폭풍을 버티면 다시 곧게 서리라.', topics:{money:'어려움을 버텨내면 안정됨',love:'시련을 함께 이겨낼 인연',career:'힘든 시기이나 무너지지 않음',health:'체력이 버텨주고 있음',travel:'험난하나 완주함',overall:'강인함이 필요한 시기'} },
+  { num:27, level:'good', poem:'ใบยี่สิบเจ็ดเหมือนผึ้งขยัน\nหาน้ำหวานไม่เคยหยุด\nทำงานหนักจะได้รับผล\nผลตอบแทนดีดังที่หวัง', meaning:'스물일곱 번째 제비 — 부지런한 벌이 꿀을 모으듯, 열심히 일하면 반드시 좋은 결과를 얻으리라. 노력한 만큼 보상이 따라오는 시기이니라.', topics:{money:'부지런히 일하면 재물이 옴',love:'진심과 노력이 마음을 얻음',career:'열심히 한 만큼 보상을 받음',health:'꾸준한 운동과 관리가 효과를 냄',travel:'알찬 여행이 됨',overall:'노력이 빛을 발하는 시기'} },
+  { num:28, level:'great', poem:'ใบยี่สิบแปดสุดท้ายดีเลิศ\nเหมือนดาวนำทางส่องสว่างไสว\nครบสมบูรณ์ทุกสิ่งที่ปรารถนา\nโชคดีมีสุขตลอดไป', meaning:'스물여덟 번째 제비 — 마지막 제비로 가장 빛나는 운이라. 북극성이 항상 빛나며 길을 인도하듯, 모든 소원이 이루어지고 기쁨이 영원히 함께하리라.', topics:{money:'최상의 재운',love:'완전한 행복',career:'최고의 성취',health:'완벽한 건강',travel:'최고의 여행',overall:'최상의 대길 — 더할 나위 없음'} }
+];
+
+const levelMap = {
+  great: { label:'✨ 대길 (ดีเลิศ)', cls:'level-great' },
+  good:  { label:'🌿 길 (ดี)',       cls:'level-good' },
+  mid:   { label:'⚖️ 중길 (ปานกลาง)', cls:'level-mid' },
+  bad:   { label:'🌧️ 흉 (ไม่ดี)',    cls:'level-bad' }
+};
+
+const topicLabels = {
+  overall:'전반운', money:'재물운', love:'연애운', career:'커리어', health:'건강', travel:'여행운'
+};
+
+function shakeTube() {
+  const btn = document.getElementById('shakeBtn');
+  btn.classList.add('shaking');
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.classList.remove('shaking');
+    btn.disabled = false;
+    showFortune();
+  }, 800);
+}
+
+function showFortune() {
+  const topic = document.getElementById('topicSelect').value;
+  const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+  const level = levelMap[fortune.level];
+
+  document.getElementById('stickNum').textContent = fortune.num;
+
+  const badge = document.getElementById('levelBadge');
+  badge.textContent = level.label;
+  badge.className = 'level-badge ' + level.cls;
+
+  document.getElementById('poemThai').innerHTML = fortune.poem.replace(/\n/g, '<br>');
+  document.getElementById('meaningText').textContent = fortune.meaning;
+
+  const shownTopics = topic === 'overall'
+    ? ['money','love','career','health']
+    : [topic,'overall'];
+
+  document.getElementById('topicGrid').innerHTML = shownTopics.map(t => `
+    <div class="topic-item">
+      <span class="topic-name">${topicLabels[t]}</span>
+      <span class="topic-value">${fortune.topics[t]}</span>
+    </div>
+  `).join('');
+
+  document.getElementById('resultArea').classList.add('visible');
+  document.getElementById('resultArea').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function resetApp() {
+  document.getElementById('resultArea').classList.remove('visible');
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+</script>
+</body>
+</html>
