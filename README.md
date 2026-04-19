@@ -8,7 +8,7 @@
 
 ## 🎋 바로 해보기
 
-👉 **[씨암씨 뽑으러 가기](https://[your-username].github.io/siam-si)**
+👉 **[씨암씨 뽑으러 가기](https://gh4ever.github.io/siam-si-thai-fortunetelling)**
 
 ## 씨암씨란?
 
